@@ -1,0 +1,35 @@
+<section class="card contenedor">
+    
+    <h2>Experiencia</h2>
+    <div class="experiencia caja-format">
+        <ul *ngFor="let exp of experiencia">
+            <li><div><h3>{{exp.empresa}} <i class="fa-solid fa-industry"></i></h3></div><a class="btn" (click)="editarEmpresa(exp)"><i class="fa fa-pen"></i></a></li>
+            <li *ngIf="(exp === expSeleccionada)&&(editarEmpres)">
+                <input id="editar-nom" type="text" [(ngModel)]="expSeleccionada.empresa" (keydown.enter)="onEnterEmpresa($event)" [hidden]="false">
+            </li>
+
+            <li><p>{{exp.puesto}}</p></li>
+            <li *ngIf="(exp === expSeleccionada)&&(editarPuesto)">
+                <input id="editar-nom" type="text" [(ngModel)]="expSeleccionada.puesto" (keydown.enter)="onEnterPuesto($event)" [hidden]="false">
+            </li>
+
+            <li *ngIf="!(exp.trabajoActual)"><span>{{exp.fechainicio}} - {{exp.fechaFin}}</span></li>
+            <li *ngIf="(exp === expSeleccionada)&&(editarFechaI)">
+                <input style="width:90%" id="editar-nom" type="text" [(ngModel)]="expSeleccionada.fechainicio" (keydown.enter)="onEnterFechaI($event)" [hidden]="false"></li>
+                <li *ngIf="(exp === expSeleccionada)&&(editarFechaFin)&&(!(exp.trabajoActual))">
+                <input style="width:90%" id="editar-nom" type="text" [(ngModel)]="expSeleccionada.fechaFin" (keydown.enter)="onEnterFechaFin($event)" [hidden]="false">
+            </li>
+
+
+            <li *ngIf="(exp.trabajoActual)">Actualmente me encuentro trabajando desde la fecha <span>{{exp.fechainicio}}</span></li>
+            <li *ngIf="(exp === expSeleccionada)&&(editarActual)&&(exp.trabajoActual)">
+                <input style="width:90%" id="editar-nom" type="text" [(ngModel)]="expSeleccionada.inicio" (keydown.enter)="onEnterActual($event)" [hidden]="false">
+            </li>
+            
+            <li><p>{{exp.descripcion}}</p></li>
+            <li *ngIf="(exp === expSeleccionada)&&(editarDescripcion)">
+                <textarea style="width:90%" id="editar-nom" type="text" [(ngModel)]="expSeleccionada.descripcion" (keydown.enter)="onEnterDescripcion($event)" [hidden]="false"></textarea>
+            </li>
+        </ul>
+    </div>
+</section>

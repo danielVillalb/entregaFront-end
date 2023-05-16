@@ -1,0 +1,57 @@
+<section class="card acerca-de">
+        <div class="contenedo">
+            <div class="left">
+                <div class="centrar-cont">
+                    <div class="perfil nuevo edit-imagenes"><img  class="edit-foto" [src]="imagen1">
+                    <a class="btn-imagen btn-primary" (click)="editarFoto()">
+                        <i class="fa fa-pen"></i> 
+                    </a>
+                    <p *ngIf="editarF"><input id="editar-nom" type="text" [(ngModel)]="imagen1" (keydown.enter)="onEnterFoto($event)" [hidden]="false"></p>
+                </div>
+                </div>
+                <div class="contenedor personal">
+                    
+                    <ul>
+                        <li>{{nombre1}}<a class="btn btn-primary edit-texto" (click)="editarNombre()">
+                            <i class="fa fa-pen"></i> 
+                        </a></li>
+                        <li *ngIf="editarN">
+                            <input id="editar-nom" type="text" [(ngModel)]="nombre1" (keydown.enter)="onEnterNombre($event)" [hidden]="false">
+                        </li>
+                        <li>{{apellido1}}<a class="btn btn-primary edit-texto" (click)="editarApellido()">
+                            <i class="fa fa-pen"></i> 
+                        </a></li>
+                        <li *ngIf="editarA"> 
+                            <input id="editar-nom" type="text" [(ngModel)]="apellido1" (keydown.enter)="onEnterApellido($event)" (keydown.enter)="editarPersona()" [hidden]="false">
+                        </li>
+                        <li><span class="resaltar">Full stack-junior</span></li>
+                    </ul>
+                    <a class="btn-edit"><i class="fa fa-pen"></i></a>
+                </div>
+            </div>
+            <div class="rigth">
+                <div class="caja">
+                    <h2>Acerca de mi</h2><a class="btn btn-primary edit-texto" (click)="editarSobreMi()">
+                        <i class="fa fa-pen"></i> </a>
+                </div>
+                <p>{{sobreMi1}}</p>
+                <p *ngIf="editarS"><textarea id="editar-sobre" type="text-area" [(ngModel)]="sobreMi1" (keydown.enter)="onEnterSobremi($event)" (keydown.enter)="editarPersona()" [hidden]="false" style="width:90%"></textarea></p>
+                
+            </div>
+        </div>
+        <!--<label for="file-input">
+            <input type="file" id="file-input" (change)="onFileSelected($event)" hidden></label>
+            <img [src]="imageSrc" class="perfil" alt="" *ngIf="imageSrc">
+            <label for="file-input">
+                <i class="fa fa-pen"></i> 
+            </label>
+            <img [src]="imageUrl" alt="Imagen" width="200" height="200">
+            <input type="file" (change)="onFileSelected2($event)">
+            <button (click)="crearPersona()">Crear persona</button>
+            <button (click)="crearExperiencia()">crear experiencia</button>
+            <button (click)="crearEducacion()">crear educacion</button>
+            <input type="text" [(ngModel)]="imagens" (keydown.enter)="onEnter($event)">
+            
+        -->
+        
+    </section>

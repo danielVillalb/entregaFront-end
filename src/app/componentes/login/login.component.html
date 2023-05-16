@@ -1,0 +1,21 @@
+<div class="container ">
+  <div class="row justify-content-center align-items-center vh-100">
+    <div class="col-sm-6 col-md-4 caja22">
+      <div class="login-cont p-4 shadow">
+        <h3 class="text-center mb-4 title22">Iniciar sesión</h3>
+        <form>
+          <div class="form-group user">
+            <label class="title22" for="user">Usuario</label>
+            <input class="form-control" type="text" [(ngModel)]="username" name="user">
+          </div>
+          <div class="form-group pass">
+            <label class="title22" for="password">Contraseña</label>
+            <input class="form-control" type="password" [(ngModel)]="password" name="password">
+          </div>
+          <button class="btn btn-primary btn-block" (click)="comprobar2()">Ingresar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
