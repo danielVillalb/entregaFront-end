@@ -18,7 +18,7 @@ export class AuthService {
       'Content-Type': 'application/json'
     })
   };
-  private apiUser='http://api-portafolio1.herokuapp.com/usuario/valido/4'
+  private apiUser='https://api-portafolio1.herokuapp.com/usuario/valido/4'
   comprobar(usuario:Usuario):Observable<any>{
     return this.http.post<boolean>(this.apiUser,usuario)
   }

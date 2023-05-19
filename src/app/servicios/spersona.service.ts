@@ -16,13 +16,13 @@ export class SPersonaService {
     return this.http.get('https://api-portafolio1.herokuapp.com/traer/perso');
   }
   
-  private apiUrl = 'http://api-portafolio1.herokuapp.com/crear';
-  private apiExpUrl='http://api-portafolio1.herokuapp.com/crear/exp';
-  private apiEduUrl='http://api-portafolio1.herokuapp.com/crear/educacion';
-  private apiEditarPerso='http://api-portafolio1.herokuapp.com/editar/persona/4';
-  private apiEditarEducacion='http://api-portafolio1.herokuapp.com/editar/educacion/4';
-  private apiEditarExp='http://api-portafolio1.herokuapp.com/editar/experiencia/4';
-  private apiEditarProyect='http://api-portafolio1.herokuapp.com/editar/proyectos/4';
+  private apiUrl = 'https://api-portafolio1.herokuapp.com/crear';
+  private apiExpUrl='https://api-portafolio1.herokuapp.com/crear/exp';
+  private apiEduUrl='https://api-portafolio1.herokuapp.com/crear/educacion';
+  private apiEditarPerso='https://api-portafolio1.herokuapp.com/editar/persona/4';
+  private apiEditarEducacion='https://api-portafolio1.herokuapp.com/editar/educacion/4';
+  private apiEditarExp='https://api-portafolio1.herokuapp.com/editar/experiencia/4';
+  private apiEditarProyect='https://api-portafolio1.herokuapp.com/editar/proyectos/4';
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
