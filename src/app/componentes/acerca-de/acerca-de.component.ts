@@ -28,12 +28,13 @@ export class AcercaDeComponent {
   ngOnInit():void{
     //console.log(this.equipos);
     this.datos.probando().subscribe(data => {
+      console.log("data");
       console.log(data)
       this.miPortafolio=data;
-      this.nombre1=data[1].nombre;
-      this.apellido1=data[1].apellido;
-      this.imagen1=data[1].urlImagen;
-      this.sobreMi1=data[1].sobreMi;
+      this.nombre1=data[0].nombre;
+      this.apellido1=data[0].apellido;
+      this.imagen1=data[0].urlImagen;
+      this.sobreMi1=data[0].sobreMi;
       console.log(this.imagen);
     });
 
@@ -54,7 +55,7 @@ export class AcercaDeComponent {
     this.datos.editarPersona(persona).subscribe(
       response => {
         console.log(response);
-        this.miPortafolio2=response[1];
+        this.miPortafolio2=response[0];
         console.log("ta andando")
       },
       error => {
@@ -85,23 +86,23 @@ editarFoto(){
 }
   onEnterNombre(event: any) {
     this.editarN=false;
-    this.nombre1=this.miPortafolio2[1].nombre;
+    this.nombre1=this.miPortafolio2[0].nombre;
   }
   onEnterApellido(event: any) {
     this.editarA=false;
-    this.apellido1=this.miPortafolio2[1].apellido;
+    this.apellido1=this.miPortafolio2[0].apellido;
   }
   onEnterFoto(event: any) {
     this.editarF=false;
     if(this.imagen1==''){
-      this.imagen1=this.miPortafolio[1].urlImagen;
+      this.imagen1=this.miPortafolio[0].urlImagen;
     }else{
-    this.imagen1=this.miPortafolio2[1].urlImagen;
+    this.imagen1=this.miPortafolio2[0].urlImagen;
     }
   }
   onEnterSobremi(event: any) {
     this.editarS=false;
-    this.sobreMi1=this.miPortafolio2[1].imagen;
+    this.sobreMi1=this.miPortafolio2[0].imagen;
   }
 
 

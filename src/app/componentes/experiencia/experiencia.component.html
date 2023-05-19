@@ -3,7 +3,7 @@
     <h2>Experiencia</h2>
     <div class="experiencia caja-format">
         <ul *ngFor="let exp of experiencia">
-            <li><div><h3>{{exp.empresa}} <i class="fa-solid fa-industry"></i></h3></div><a class="btn" (click)="editarEmpresa(exp)"><i class="fa fa-pen"></i></a></li>
+            <li><div><h3>{{exp.empresa}} <i class="fa-solid fa-industry"></i></h3></div><!--<a class="btn" (click)="editarEmpresa(exp)"><i class="fa fa-pen"></i></a></li>-->
             <li *ngIf="(exp === expSeleccionada)&&(editarEmpres)">
                 <input id="editar-nom" type="text" [(ngModel)]="expSeleccionada.empresa" (keydown.enter)="onEnterEmpresa($event)" [hidden]="false">
             </li>

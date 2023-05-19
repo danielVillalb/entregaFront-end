@@ -13,15 +13,16 @@ import { Proyectos } from '../clases/proyectos';
 export class SPersonaService {
   constructor(private http:HttpClient) { }
   probando():Observable<any>{
-    return this.http.get('http://localhost:8080/traer');
+    return this.http.get('https://api-portafolio1.herokuapp.com/traer/perso');
   }
-  private apiUrl = 'http://localhost:8080/crear';
-  private apiExpUrl='http://localhost:8080/crear/exp';
-  private apiEduUrl='http://localhost:8080/crear/educacion';
-  private apiEditarPerso='http://localhost:8080/editar/persona/2';
-  private apiEditarEducacion='http://localhost:8080/editar/educacion/2';
-  private apiEditarExp='http://localhost:8080/editar/experiencia/2';
-  private apiEditarProyect='http://localhost:8080/editar/proyectos/2';
+  
+  private apiUrl = 'http://api-portafolio1.herokuapp.com/crear';
+  private apiExpUrl='http://api-portafolio1.herokuapp.com/crear/exp';
+  private apiEduUrl='http://api-portafolio1.herokuapp.com/crear/educacion';
+  private apiEditarPerso='http://api-portafolio1.herokuapp.com/editar/persona/4';
+  private apiEditarEducacion='http://api-portafolio1.herokuapp.com/editar/educacion/4';
+  private apiEditarExp='http://api-portafolio1.herokuapp.com/editar/experiencia/4';
+  private apiEditarProyect='http://api-portafolio1.herokuapp.com/editar/proyectos/4';
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -118,6 +119,6 @@ export class SPersonaService {
 
 
   //apiPrueba():Observable<any>{
-   // return this.http.get('http://localhost:8080/personas/traer')
-  //}
+   // return this.http.get('http://api-portafolio1.herokuapp.com/personas/traer')
+  //}*/
 }

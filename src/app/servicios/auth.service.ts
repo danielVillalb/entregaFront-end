@@ -9,7 +9,7 @@ import { Usuario } from '../clases/usuario';
 export class AuthService {
   constructor(private http:HttpClient) { }
   usuarios():Observable<any>{
-    return this.http.get('http://localhost:8080/traer/users');
+    return this.http.get('http://api-portafolio1.herokuapp.com/traer/users');
   }
   
 
@@ -18,7 +18,7 @@ export class AuthService {
       'Content-Type': 'application/json'
     })
   };
-  private apiUser='http://localhost:8080/usuario/valido/1'
+  private apiUser='http://api-portafolio1.herokuapp.com/usuario/valido/4'
   comprobar(usuario:Usuario):Observable<any>{
     return this.http.post<boolean>(this.apiUser,usuario)
   }

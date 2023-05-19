@@ -22,12 +22,12 @@ export class ExperienciaComponent {
   constructor(private datos:SPersonaService){}
   ngOnInit():void{
     this.datos.probando().subscribe(data => {
-      this.info=data[1].experiencia;
-      this.experiencia = data[1].experiencia;
-      this.empresa1 = data[1].experiencia.empresa;
-      this.trabajoActual1 = data[1].experiencia.trabajoActual;
-      this.fechaFin1 = data[1].experiencia.fechaFin;
-      this.fechainicio1 = data[1].experiencia.fechainicio;
+      this.info=data[0].experiencia;
+      this.experiencia = data[0].experiencia;
+      this.empresa1 = data[0].experiencia.empresa;
+      this.trabajoActual1 = data[0].experiencia.trabajoActual;
+      this.fechaFin1 = data[0].experiencia.fechaFin;
+      this.fechainicio1 = data[0].experiencia.fechainicio;
 
 
       console.log("a ver que me da");
@@ -51,7 +51,7 @@ export class ExperienciaComponent {
   this.datos.editarExperiencia(experiencia).subscribe(
     data=>{
       console.log(data);
-      this.experiencia1=data[1].experiencia;
+      this.experiencia1=data[0].experiencia;
       console.log("tambien anda")
     },
     error=>{
@@ -96,34 +96,26 @@ editarEmpresa(exp:any) {
   }*/
   onEnterEmpresa(event: any) {
     this.editarEmpres=false;
-    this.empresa1=this.experiencia1[1].empresa;
+    this.empresa1=this.experiencia1[0].empresa;
   }
   onEnterPuesto(event: any) {
     this.editarPuesto=false;
-    this.puesto1=this.experiencia1[1].puesto;
+    this.puesto1=this.experiencia1[0].puesto;
   }
   onEnterFechaI(event: any) {
     this.editarFechaI=false;
-    this.fechainicio1=this.experiencia1[1].fechainicio;
+    this.fechainicio1=this.experiencia1[0].fechainicio;
   }
   onEnterFechaFin(event: any) {
     this.editarFechaFin=false;
-    this.fechaFin1=this.experiencia1[1].fechaFin;
+    this.fechaFin1=this.experiencia1[0].fechaFin;
   }
   onEnterDescripcion(event: any) {
     this.editarDescripcion=false;
-    this.descripcion1=this.experiencia1[1].descripcion;
+    this.descripcion1=this.experiencia1[0].descripcion;
   }
   onEnterActual(event: any) {
     this.editarActual=false;
-    this.trabajoActual1=this.experiencia1[1].trabajoActual;
+    this.trabajoActual1=this.experiencia1[0].trabajoActual;
   }
-
-
-
-
-
-
-
-
 }
