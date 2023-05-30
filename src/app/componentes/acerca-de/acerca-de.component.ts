@@ -85,8 +85,10 @@ editarFoto(){
   this.editarF=true;
 }
   onEnterNombre(event: any) {
+    
     this.editarN=false;
     this.nombre1=this.miPortafolio2[0].nombre;
+   
   }
   onEnterApellido(event: any) {
     this.editarA=false;

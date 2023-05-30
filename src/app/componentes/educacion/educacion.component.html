@@ -5,19 +5,19 @@
         
         <ul class="card" *ngFor="let inst of educacion">
             <li>
-                <div><h3>{{inst.instituto}}<i class="fa-solid fa-industry"></i></h3></div></li><!--</div><a class="btn" (click)="editarEducaciones(inst)"><i class="fa fa-pen"></i></a></li>-->
-                <li *ngIf="(inst === instSeleccionada)">
-                    <input id="editar-nom" type="text" [(ngModel)]="instSeleccionada.instituto" (keydown.enter)="onEnterInstituto($event)" [hidden]="false">
+                <div><h3>{{inst.instituto}}<i class="fa-solid fa-industry"></i></h3></div><a class="btn" (click)="editarEducaciones(inst)"><i class="fa fa-pen"></i></a></li>
+                <li *ngIf="((inst === instSeleccionada)&&(editarInstituto))">
+                    <input id="editar-nom" type="text" [(ngModel)]="instSeleccionada.instituto" (keydown.enter)="onEnterInstituto($event)" [hidden]="false" (keydown.enter)="editarEducacion()">
                 </li>
                 
             
             <li><p>{{inst.titulo}}</p></li>
-            <li *ngIf="(inst === instSeleccionada)">
-                <input id="editar-nom" type="text" [(ngModel)]="instSeleccionada.titulo" (keydown.enter)="onEnterTitulo($event)" [hidden]="false">
+            <li *ngIf="((inst === instSeleccionada)&&(editarTitulo))">
+                <input id="editar-nom" type="text" [(ngModel)]="instSeleccionada.titulo" (keydown.enter)="onEnterTitulo($event)" [hidden]="false" (keydown.enter)="editarEducacion()">
             </li>
             <li><p>{{inst.periodo}}</p></li>
-            <li *ngIf="(inst === instSeleccionada)">
-                <input id="editar-nom" type="text" [(ngModel)]="instSeleccionada.periodo" (keydown.enter)="onEnterPeriodo($event)" [hidden]="false">
+            <li *ngIf="((inst === instSeleccionada)&&(editarPeriodo))">
+                <input id="editar-nom" type="text" [(ngModel)]="instSeleccionada.periodo" (keydown.enter)="onEnterPeriodo($event)" [hidden]="false" (keydown.enter)="editarEducacion()">
             </li>
             
         </ul>

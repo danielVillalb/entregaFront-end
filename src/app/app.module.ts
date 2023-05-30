@@ -42,7 +42,8 @@ const appRoutes: Routes = [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

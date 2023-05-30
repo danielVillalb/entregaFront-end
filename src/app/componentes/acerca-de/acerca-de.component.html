@@ -12,11 +12,11 @@
                 <div class="contenedor personal">
                     
                     <ul>
-                        <li>{{nombre1}}<!--<a class="btn btn-primary edit-texto" (click)="editarNombre()">
+                        <li>{{nombre1}}<a class="btn btn-primary edit-texto" (click)="editarNombre()">
                             <i class="fa fa-pen"></i> 
-                        </a>--></li>
+                        </a></li>
                         <li *ngIf="editarN">
-                            <input id="editar-nom" type="text" [(ngModel)]="nombre1" (keydown.enter)="onEnterNombre($event)" [hidden]="false">
+                            <input id="editar-nom" type="text" [(ngModel)]="nombre1" (keydown.enter)="onEnterNombre($event)" (keydown.enter)="editarPersona()" [hidden]="false">
                         </li>
                         <li>{{apellido1}}<!--<a class="btn btn-primary edit-texto" (click)="editarApellido()">
                             <i class="fa fa-pen"></i> 

@@ -39,19 +39,19 @@ export class ExperienciaComponent {
   /*-----------editar la experiencia------------*/
  editarExperiencia():void{
   const experiencia:Experiencia={
-  empresa:this.empresa1,
-  trabajoActual:this.trabajoActual1,
-  fechainicio:this.fechainicio1,
-  fechaFin:this.fechaFin1,
-  descripcion:this.descripcion1,
+  empresa:this.expSeleccionada.empresa,
+  trabajoActual:this.expSeleccionada.trabajoActual,
+  fechainicio:this.expSeleccionada.fechainicio,
+  fechaFin:this.expSeleccionada.fechaFin,
+  descripcion:this.expSeleccionada.descripcion,
   persona:{
-    id:1
+    id:4
     }
   }
-  this.datos.editarExperiencia(experiencia).subscribe(
+  this.datos.editarExperiencia(experiencia,this.expSeleccionada.id).subscribe(
     data=>{
       console.log(data);
-      this.experiencia1=data[0].experiencia;
+      this.experiencia1=data[0];
       console.log("tambien anda")
     },
     error=>{

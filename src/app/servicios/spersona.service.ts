@@ -20,8 +20,8 @@ export class SPersonaService {
   private apiExpUrl='https://api-portafolio1.herokuapp.com/crear/exp';
   private apiEduUrl='https://api-portafolio1.herokuapp.com/crear/educacion';
   private apiEditarPerso='https://api-portafolio1.herokuapp.com/editar/persona/4';
-  private apiEditarEducacion='https://api-portafolio1.herokuapp.com/editar/educacion/4';
-  private apiEditarExp='https://api-portafolio1.herokuapp.com/editar/experiencia/4';
+  private apiEditarEducacion='https://api-portafolio1.herokuapp.com/editar/educacion';
+  private apiEditarExp='https://api-portafolio1.herokuapp.com/editar/experiencia';
   private apiEditarProyect='https://api-portafolio1.herokuapp.com/editar/proyectos/4';
   private httpOptions = {
     headers: new HttpHeaders({
@@ -29,21 +29,25 @@ export class SPersonaService {
     })
   };
   editarPersona(persona:Persona):Observable<any>{
+    
     return this.http.put<any>(this.apiEditarPerso,persona, this.httpOptions)
     .pipe(
       tap(response => console.log(response)),
       catchError(this.handleError)
     );
   }
-  editarEducacion(educacion:Educacion):Observable<any>{
-    return this.http.put<any>(this.apiEditarEducacion,educacion, this.httpOptions)
+  editarEducacion(educacion:any,id:any):Observable<any>{
+    const url=`this.apiEditarEducacion/${id}`
+    console.log(url);
+    return this.http.put<any>(`https://api-portafolio1.herokuapp.com/editar/educacion/${id}`,educacion, this.httpOptions)
     .pipe(
       tap(response => console.log(response)),
       catchError(this.handleError)
     );
   }
-  editarExperiencia(experiencia:Experiencia):Observable<any>{
-    return this.http.put<any>(this.apiEditarExp,experiencia, this.httpOptions)
+  editarExperiencia(experiencia:Experiencia,id:any):Observable<any>{
+    
+    return this.http.put<any>(`https://api-portafolio1.herokuapp.com/editar/experiencia/${id}`,experiencia, this.httpOptions)
     .pipe(
       tap(response => console.log(response)),
       catchError(this.handleError)
