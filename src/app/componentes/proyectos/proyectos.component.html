@@ -1,1 +1,28 @@
-<p>proyectos works!</p>
+<div class="card"><h2>Proyectos</h2>
+
+    <ul class="container-proyectos" *ngFor="let proyect of proyectos">
+        <div class="datos-proyect">
+            <li *ngIf="!editarNombre"><div>{{proyect.nombre}}<i class="fa-solid fa-industry"></i></div><a class="btn desactivado" (click)="editarProyecto(proyect)"><i class="fa fa-pen"></i></a></li>
+            <li *ngIf="((proyect === proyectSeleccionado)&&(editarNombre))">
+                <input id="editar-nom" type="text" [(ngModel)]="proyectSeleccionado.nombre" (keydown.enter)="onEnterNombre($event)" [hidden]="false" (keydown.enter)="editarProyectos()">
+            </li>
+
+
+            
+            <li *ngIf="((proyect === proyectSeleccionado)&&(editarLink))">
+                <input id="editar-nom" type="text" [(ngModel)]="proyectSeleccionado.link" (keydown.enter)="onEnterLink($event)" [hidden]="false" (keydown.enter)="editarProyectos()">
+            </li>
+            <li *ngIf="!editarDescripcion"><p>{{proyect.descripcion}}</p></li>
+            <li *ngIf="((proyect === proyectSeleccionado)&&(editarDescripcion))">
+                <textarea id="editar-nom" type="text" [(ngModel)]="proyectSeleccionado.descripcion" (keydown.enter)="onEnterDescripcion($event)" [hidden]="false" (keydown.enter)="editarProyectos()"></textarea>
+            </li>
+        </div>
+        <li>
+            <div class="pagina-lik">
+                <iframe  [src]="sanitizeUrl(proyect.link)" frameborder="0"></iframe>
+                <p *ngIf="!editarLink"><a class="links" href="{{proyect.link}}" target="_blank">ingrese a la pagina</a></p>
+            </div>
+        </li>
+        <!-- <li><a href="{{proyect.link}}" target="_blank"><div class="proyectos"><img src="https://drive.google.com/uc?export=download&id={{proyect.imagen}}" alt="vista previa del proyecto" ></div></a></li> -->
+    </ul>
+</div>

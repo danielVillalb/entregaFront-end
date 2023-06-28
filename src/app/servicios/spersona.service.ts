@@ -13,16 +13,16 @@ import { Proyectos } from '../clases/proyectos';
 export class SPersonaService {
   constructor(private http:HttpClient) { }
   probando():Observable<any>{
-    return this.http.get('https://api-portafolio1.herokuapp.com/traer/perso');
+    return this.http.get('https://entregaback-end-production.up.railway.app/traer/perso');
   }
   
-  private apiUrl = 'https://api-portafolio1.herokuapp.com/crear';
-  private apiExpUrl='https://api-portafolio1.herokuapp.com/crear/exp';
-  private apiEduUrl='https://api-portafolio1.herokuapp.com/crear/educacion';
-  private apiEditarPerso='https://api-portafolio1.herokuapp.com/editar/persona/4';
-  private apiEditarEducacion='https://api-portafolio1.herokuapp.com/editar/educacion';
-  private apiEditarExp='https://api-portafolio1.herokuapp.com/editar/experiencia';
-  private apiEditarProyect='https://api-portafolio1.herokuapp.com/editar/proyectos/4';
+  private apiUrl = 'https://entregaback-end-production.up.railway.app/crear';
+  private apiExpUrl='https://entregaback-end-production.up.railway.app/crear/exp';
+  private apiEduUrl='https://entregaback-end-production.up.railway.app/crear/educacion';
+  private apiEditarPerso='https://entregaback-end-production.up.railway.app/editar/persona/4';
+  private apiEditarEducacion='https://entregaback-end-production.up.railway.app/editar/educacion';
+  private apiEditarExp='https://entregaback-end-production.up.railway.app/editar/experiencia';
+  private apiEditarProyect='https://entregaback-end-production.up.railway.app/editar/proyectos/4';
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -39,7 +39,7 @@ export class SPersonaService {
   editarEducacion(educacion:any,id:any):Observable<any>{
     const url=`this.apiEditarEducacion/${id}`
     console.log(url);
-    return this.http.put<any>(`https://api-portafolio1.herokuapp.com/editar/educacion/${id}`,educacion, this.httpOptions)
+    return this.http.put<any>(`https://entregaback-end-production.up.railway.app/editar/educacion/${id}`,educacion, this.httpOptions)
     .pipe(
       tap(response => console.log(response)),
       catchError(this.handleError)
@@ -47,14 +47,14 @@ export class SPersonaService {
   }
   editarExperiencia(experiencia:Experiencia,id:any):Observable<any>{
     
-    return this.http.put<any>(`https://api-portafolio1.herokuapp.com/editar/experiencia/${id}`,experiencia, this.httpOptions)
+    return this.http.put<any>(`https://entregaback-end-production.up.railway.app/editar/experiencia/${id}`,experiencia, this.httpOptions)
     .pipe(
       tap(response => console.log(response)),
       catchError(this.handleError)
     );
   }
-  editarProyectos(proyectos:Proyectos):Observable<any>{
-    return this.http.put<any>(this.apiEditarProyect,proyectos, this.httpOptions)
+  editarProyectos(proyectos:Proyectos,id:any):Observable<any>{
+    return this.http.put<any>(`https://entregaback-end-production.up.railway.app/editar/proyectos/${id}`,proyectos, this.httpOptions)
     .pipe(
       tap(response => console.log(response)),
       catchError(this.handleError)
@@ -123,6 +123,6 @@ export class SPersonaService {
 
 
   //apiPrueba():Observable<any>{
-   // return this.http.get('http://api-portafolio1.herokuapp.com/personas/traer')
+   // return this.http.get('https://entregaback-end-production.up.railway.app/personas/traer')
   //}*/
 }

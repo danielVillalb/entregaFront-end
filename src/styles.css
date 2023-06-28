@@ -215,6 +215,37 @@ li h3{
 
 
 /*----------Proyectos-----*/
+.proyectos{
+    width: 200px;
+    height: 200px;
+    display: flex;  
+    overflow: hidden;
+}
+.container-proyectos{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+}
+.proyectos img{
+    transition: transform 0.3s ease;
+}
+.proyectos img:hover{
+    
+    transform: scale(1.3); 
+}
+.links:hover{
+    color:brown;
+}
+.links{
+    text-decoration: none;
+    color: black;
+}
+
+
+
+
+
+
 
 
 .n1 h2{
@@ -285,3 +316,41 @@ li textarea{
 li textarea{
     width: 90%;
 }
+input{
+    width: 100%;
+}
+.datos-proyect{
+    width: 50%;
+    
+}
+
+
+
+
+/*Proytectos*/
+.pagina-lik{
+    display: flex;
+    height: 600px;
+    flex-direction: column;
+    align-items: center;
+}
+.pagina-lik p{
+    height: auto;
+}
+.pagina-lik iframe{
+    width: 500px;
+    height: 80%;
+    scale: 1;
+    
+}
+
+
+/*desactivarbotones de editar*/
+
+.desactivado{
+    display: none!important;
+}
+
+
+
+

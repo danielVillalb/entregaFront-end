@@ -17,6 +17,10 @@ import { InicioComponent } from './componentes/inicio/inicio.component';
 import { AuthGuard } from './auth.guard';
 import { Routes } from '@angular/router';
 
+
+
+
+
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'inicio', component: InicioComponent, canActivate: [AuthGuard] },
@@ -42,7 +46,8 @@ const appRoutes: Routes = [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
+    FormsModule
+
     
   ],
   providers: [AuthGuard],

@@ -9,7 +9,7 @@ import { Usuario } from '../clases/usuario';
 export class AuthService {
   constructor(private http:HttpClient) { }
   usuarios():Observable<any>{
-    return this.http.get('http://api-portafolio1.herokuapp.com/traer/users');
+    return this.http.get('https://entregaback-end-production.up.railway.app/traer/users');
   }
   
 
@@ -18,7 +18,7 @@ export class AuthService {
       'Content-Type': 'application/json'
     })
   };
-  private apiUser='https://api-portafolio1.herokuapp.com/usuario/valido/4'
+  private apiUser='https://entregaback-end-production.up.railway.app/usuario/valido/1'
   comprobar(usuario:Usuario):Observable<any>{
     return this.http.post<boolean>(this.apiUser,usuario)
   }

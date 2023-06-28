@@ -20,7 +20,6 @@ export class EducacionComponent {
   constructor(private datos:SPersonaService){}
   ngOnInit():void{
     this.datos.probando().subscribe(data => {
-      
       this.educacion= data[0].educacion;
       this.id=data[0].educacion.id;
       this.instituto1=this.educacion.instituto;

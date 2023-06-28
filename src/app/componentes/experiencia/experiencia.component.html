@@ -3,12 +3,12 @@
     <h2>Experiencia</h2>
     <div class="experiencia caja-format">
         <ul class="card" *ngFor="let exp of experiencia">
-            <li><div><h3>{{exp.empresa}} <i class="fa-solid fa-industry"></i></h3></div><a class="btn" (click)="editarEmpresa(exp)"><i class="fa fa-pen"></i></a></li>
+            <li *ngIf="!editarEmpres"><div><h3>{{exp.empresa}} <i class="fa-solid fa-industry"></i></h3></div><a class="btn desactivado" (click)="editarEmpresa(exp)"><i class="fa fa-pen"></i></a></li>
             <li *ngIf="(exp === expSeleccionada)&&(editarEmpres)">
                 <input id="editar-nom" type="text" [(ngModel)]="expSeleccionada.empresa" (keydown.enter)="onEnterEmpresa($event)" [hidden]="false" (keydown.enter)="editarExperiencia()">
             </li>
 
-            <li><p>{{exp.puesto}}</p></li>
+            <li *ngIf="!editarPuesto "><p>{{exp.puesto}}</p></li>
             <li *ngIf="(exp === expSeleccionada)&&(editarPuesto)">
                 <input id="editar-nom" type="text" [(ngModel)]="expSeleccionada.puesto" (keydown.enter)="onEnterPuesto($event)" [hidden]="false" (keydown.enter)="editarExperiencia()">
             </li>
@@ -26,7 +26,7 @@
                 <input  id="editar-nom" type="text" [(ngModel)]="expSeleccionada.inicio" (keydown.enter)="onEnterActual($event)" [hidden]="false" (keydown.enter)="editarExperiencia()">
             </li>
             
-            <li><p>{{exp.descripcion}}</p></li>
+            <li *ngIf="!editarDescripcion"><p>{{exp.descripcion}}</p></li>
             <li *ngIf="(exp === expSeleccionada)&&(editarDescripcion)">
                 <textarea  id="editar-nom" type="text" [(ngModel)]="expSeleccionada.descripcion" (keydown.enter)="onEnterDescripcion($event)" [hidden]="false" (keydown.enter)="editarExperiencia()"></textarea>
             </li>
