@@ -13,6 +13,7 @@
 .proyect ul:hover{
     background: linear-gradient(90deg, rgba(2,0,36,1) 42%, rgba(41,0,30,1) 100%, rgba(255,0,0,1) 100%, rgba(121,9,9,1) 100%);
     color: white;
+   
 }
 
 
@@ -66,6 +67,7 @@ li iframe{
     overflow: hidden;
     border: 1px solid #eff2ff;
     border-radius: 15px;
+    background-color: white;
 }
 .datos-proyect li:last-child{
     height: 100%;
